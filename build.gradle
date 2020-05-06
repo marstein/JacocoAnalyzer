@@ -1,0 +1,53 @@
+
+plugins {
+    id 'idea'
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'io.redlock'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+bootJar {
+    baseName = 'io-redlock-springbootjpa'
+    version =  '0.1.0'
+}
+
+dependencies {
+    // Spring Boot's web application support
+    implementation('org.springframework.boot:spring-boot-starter-web')
+
+    // Spring Boot's JPA support
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    // Spring Data REST support
+    implementation('org.springframework.boot:spring-boot-starter-data-rest')
+
+    // PostgresSQL-specific connector for JPA
+    implementation('org.postgresql:postgresql:9.4-1206-jdbc42')
+
+    // Lombok autogenerates things like getters and setters
+//    compileOnly('org.projectlombok:lombok')
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.security:spring-security-test')
+}
+
+test {
+    useJUnitPlatform()
+}
