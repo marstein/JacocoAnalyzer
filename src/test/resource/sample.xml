@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd">
+<report name="redlock-search">
+    <package name="io/redlock/rql/condition/base">
+        <class name="io/redlock/rql/condition/base/SourceOrDestCondition" sourcefilename="SourceOrDestCondition.java">
+            <method name="isSource" desc="()Z" line="8">
+                <counter type="INSTRUCTION" missed="8" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isDest" desc="()Z" line="12">
+                <counter type="INSTRUCTION" missed="8" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="16" covered="0"/>
+            <counter type="BRANCH" missed="4" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="4" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractEnumMembershipCondition" sourcefilename="AbstractEnumMembershipCondition.java">
+            <method name="&lt;init&gt;" desc="(Ljava/util/Collection;)V" line="8">
+                <counter type="INSTRUCTION" missed="0" covered="4"/>
+                <counter type="LINE" missed="0" covered="2"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="0" covered="4"/>
+            <counter type="LINE" missed="0" covered="2"/>
+            <counter type="COMPLEXITY" missed="0" covered="1"/>
+            <counter type="METHOD" missed="0" covered="1"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractIntMembershipCondition" sourcefilename="AbstractIntMembershipCondition.java">
+            <method name="&lt;init&gt;" desc="(Ljava/util/Collection;)V" line="7">
+                <counter type="INSTRUCTION" missed="4" covered="0"/>
+                <counter type="LINE" missed="2" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="4" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="1" covered="0"/>
+            <counter type="METHOD" missed="1" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/ComparisonOperator$1" sourcefilename="ComparisonOperator.java">
+            <method name="&lt;init&gt;" desc="(Ljava/lang/String;ILjava/lang/String;)V" line="6">
+                <counter type="INSTRUCTION" missed="6" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="compare" desc="(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Z" line="9">
+                <counter type="INSTRUCTION" missed="9" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="15" covered="0"/>
+            <counter type="BRANCH" missed="2" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/ComparisonOperator$2" sourcefilename="ComparisonOperator.java">
+            <method name="&lt;init&gt;" desc="(Ljava/lang/String;ILjava/lang/String;)V" line="13">
+                <counter type="INSTRUCTION" missed="6" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="compare" desc="(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Z" line="16">
+                <counter type="INSTRUCTION" missed="9" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="15" covered="0"/>
+            <counter type="BRANCH" missed="2" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/IntComparisonCondition" sourcefilename="IntComparisonCondition.java"/>
+        <class name="io/redlock/rql/condition/base/ComparisonOperator$5" sourcefilename="ComparisonOperator.java">
+            <method name="&lt;init&gt;" desc="(Ljava/lang/String;ILjava/lang/String;)V" line="34">
+                <counter type="INSTRUCTION" missed="6" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="compare" desc="(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Z" line="37">
+                <counter type="INSTRUCTION" missed="10" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="16" covered="0"/>
+            <counter type="BRANCH" missed="2" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/ComparisonOperator$6" sourcefilename="ComparisonOperator.java">
+            <method name="&lt;init&gt;" desc="(Ljava/lang/String;ILjava/lang/String;)V" line="41">
+                <counter type="INSTRUCTION" missed="6" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="compare" desc="(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Z" line="44">
+                <counter type="INSTRUCTION" missed="10" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="16" covered="0"/>
+            <counter type="BRANCH" missed="2" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/ComparisonOperator$3" sourcefilename="ComparisonOperator.java">
+            <method name="&lt;init&gt;" desc="(Ljava/lang/String;ILjava/lang/String;)V" line="20">
+                <counter type="INSTRUCTION" missed="6" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="compare" desc="(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Z" line="23">
+                <counter type="INSTRUCTION" missed="9" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="15" covered="0"/>
+            <counter type="BRANCH" missed="2" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/ComparisonOperator$4" sourcefilename="ComparisonOperator.java">
+            <method name="&lt;init&gt;" desc="(Ljava/lang/String;ILjava/lang/String;)V" line="27">
+                <counter type="INSTRUCTION" missed="6" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="compare" desc="(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Z" line="30">
+                <counter type="INSTRUCTION" missed="9" covered="0"/>
+                <counter type="BRANCH" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="2" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="15" covered="0"/>
+            <counter type="BRANCH" missed="2" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/EndpointType" sourcefilename="EndpointType.java">
+            <method name="toString" desc="()Ljava/lang/String;" line="10">
+                <counter type="INSTRUCTION" missed="5" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="&lt;clinit&gt;" desc="()V" line="5">
+                <counter type="INSTRUCTION" missed="0" covered="24"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="5" covered="24"/>
+            <counter type="LINE" missed="1" covered="3"/>
+            <counter type="COMPLEXITY" missed="1" covered="1"/>
+            <counter type="METHOD" missed="1" covered="1"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/CompoundCondition$Type" sourcefilename="CompoundCondition.java">
+            <method name="&lt;clinit&gt;" desc="()V" line="82">
+                <counter type="INSTRUCTION" missed="0" covered="24"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="0" covered="24"/>
+            <counter type="LINE" missed="0" covered="3"/>
+            <counter type="COMPLEXITY" missed="0" covered="1"/>
+            <counter type="METHOD" missed="0" covered="1"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractIntComparisonCondition" sourcefilename="AbstractIntComparisonCondition.java">
+            <method name="&lt;init&gt;" desc="(Lio/redlock/rql/condition/base/ComparisonOperator;J)V" line="10">
+                <counter type="INSTRUCTION" missed="11" covered="0"/>
+                <counter type="LINE" missed="4" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getOperator" desc="()Lio/redlock/rql/condition/base/ComparisonOperator;" line="16">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getValue" desc="()J" line="20">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="17" covered="0"/>
+            <counter type="LINE" missed="6" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="3" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/Condition" sourcefilename="Condition.java">
+            <method name="isAnd" desc="()Z" line="12">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isOr" desc="()Z" line="16">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isResourceSubquery" desc="()Z" line="20">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isEventQuery" desc="()Z" line="24">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isNetworkQuery" desc="()Z" line="28">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isConfigQuery" desc="()Z" line="32">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isMatch" desc="()Z" line="35">
+                <counter type="INSTRUCTION" missed="0" covered="2"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="isContains" desc="()Z" line="37">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getChildren" desc="()Lcom/google/common/collect/ImmutableList;" line="40">
+                <counter type="INSTRUCTION" missed="2" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getChild" desc="()Lio/redlock/rql/condition/base/Condition;" line="44">
+                <counter type="INSTRUCTION" missed="1" covered="14"/>
+                <counter type="BRANCH" missed="1" covered="1"/>
+                <counter type="LINE" missed="0" covered="2"/>
+                <counter type="COMPLEXITY" missed="1" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="17" covered="16"/>
+            <counter type="BRANCH" missed="1" covered="1"/>
+            <counter type="LINE" missed="8" covered="3"/>
+            <counter type="COMPLEXITY" missed="9" covered="2"/>
+            <counter type="METHOD" missed="8" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/ComparisonOperator" sourcefilename="ComparisonOperator.java">
+            <method name="&lt;init&gt;" desc="(Ljava/lang/String;ILjava/lang/String;)V" line="50">
+                <counter type="INSTRUCTION" missed="8" covered="0"/>
+                <counter type="LINE" missed="3" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="compare" desc="(Ljava/lang/Comparable;Ljava/lang/Comparable;)Z" line="58">
+                <counter type="INSTRUCTION" missed="6" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="toString" desc="()Ljava/lang/String;" line="63">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="&lt;clinit&gt;" desc="()V" line="5">
+                <counter type="INSTRUCTION" missed="70" covered="0"/>
+                <counter type="LINE" missed="7" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="87" covered="0"/>
+            <counter type="LINE" missed="12" covered="0"/>
+            <counter type="COMPLEXITY" missed="4" covered="0"/>
+            <counter type="METHOD" missed="4" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractStringMembershipCondition" sourcefilename="AbstractStringMembershipCondition.java">
+            <method name="&lt;init&gt;" desc="(Ljava/util/Collection;)V" line="7">
+                <counter type="INSTRUCTION" missed="0" covered="7"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="setMatch" desc="(Z)V" line="13">
+                <counter type="INSTRUCTION" missed="0" covered="4"/>
+                <counter type="LINE" missed="0" covered="2"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="isMatch" desc="()Z" line="17">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="0" covered="14"/>
+            <counter type="LINE" missed="0" covered="6"/>
+            <counter type="COMPLEXITY" missed="0" covered="3"/>
+            <counter type="METHOD" missed="0" covered="3"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/StringCondition" sourcefilename="StringCondition.java"/>
+        <class name="io/redlock/rql/condition/base/BooleanCondition" sourcefilename="BooleanCondition.java"/>
+        <class name="io/redlock/rql/condition/base/AbstractSourceOrDestCondition" sourcefilename="AbstractSourceOrDestCondition.java">
+            <method name="&lt;init&gt;" desc="(Lio/redlock/rql/condition/base/EndpointType;)V" line="10">
+                <counter type="INSTRUCTION" missed="0" covered="8"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getEndpointType" desc="()Lio/redlock/rql/condition/base/EndpointType;" line="15">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="0" covered="11"/>
+            <counter type="LINE" missed="0" covered="4"/>
+            <counter type="COMPLEXITY" missed="0" covered="2"/>
+            <counter type="METHOD" missed="0" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractCondition" sourcefilename="AbstractCondition.java">
+            <method name="&lt;init&gt;" desc="()V" line="3">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="isNegated" desc="()Z" line="8">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="setNegated" desc="(Z)V" line="13">
+                <counter type="INSTRUCTION" missed="0" covered="4"/>
+                <counter type="LINE" missed="0" covered="2"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="0" covered="10"/>
+            <counter type="LINE" missed="0" covered="4"/>
+            <counter type="COMPLEXITY" missed="0" covered="3"/>
+            <counter type="METHOD" missed="0" covered="3"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractStringCondition" sourcefilename="AbstractStringCondition.java">
+            <method name="&lt;init&gt;" desc="()V" line="3">
+                <counter type="INSTRUCTION" missed="0" covered="6"/>
+                <counter type="LINE" missed="0" covered="2"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="setMatch" desc="(Z)V" line="8">
+                <counter type="INSTRUCTION" missed="4" covered="0"/>
+                <counter type="LINE" missed="2" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="isMatch" desc="()Z" line="12">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="4" covered="9"/>
+            <counter type="LINE" missed="2" covered="3"/>
+            <counter type="COMPLEXITY" missed="1" covered="2"/>
+            <counter type="METHOD" missed="1" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/MembershipCondition" sourcefilename="MembershipCondition.java"/>
+        <class name="io/redlock/rql/condition/base/CompoundCondition" sourcefilename="CompoundCondition.java">
+            <method name="&lt;init&gt;" desc="(Lio/redlock/rql/condition/base/CompoundCondition$Type;Ljava/util/List;)V" line="13">
+                <counter type="INSTRUCTION" missed="0" covered="13"/>
+                <counter type="LINE" missed="0" covered="4"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="liftChildren" desc="(Lio/redlock/rql/condition/base/CompoundCondition$Type;Ljava/util/List;)Lcom/google/common/collect/ImmutableList;" line="38">
+                <counter type="INSTRUCTION" missed="0" covered="40"/>
+                <counter type="BRANCH" missed="0" covered="8"/>
+                <counter type="LINE" missed="0" covered="8"/>
+                <counter type="COMPLEXITY" missed="0" covered="5"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="and" desc="(Lio/redlock/rql/condition/base/Condition;Lio/redlock/rql/condition/base/Condition;)Lio/redlock/rql/condition/base/CompoundCondition;" line="55">
+                <counter type="INSTRUCTION" missed="0" covered="8"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="or" desc="(Lio/redlock/rql/condition/base/Condition;Lio/redlock/rql/condition/base/Condition;)Lio/redlock/rql/condition/base/CompoundCondition;" line="59">
+                <counter type="INSTRUCTION" missed="0" covered="8"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="isAnd" desc="()Z" line="64">
+                <counter type="INSTRUCTION" missed="0" covered="8"/>
+                <counter type="BRANCH" missed="0" covered="2"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="2"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="isOr" desc="()Z" line="69">
+                <counter type="INSTRUCTION" missed="1" covered="7"/>
+                <counter type="BRANCH" missed="1" covered="1"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="1" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getChildren" desc="()Lcom/google/common/collect/ImmutableList;" line="74">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="accept" desc="(Lio/redlock/rql/condition/ConditionVisitor;)V" line="79">
+                <counter type="INSTRUCTION" missed="0" covered="4"/>
+                <counter type="LINE" missed="0" covered="2"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="1" covered="91"/>
+            <counter type="BRANCH" missed="1" covered="11"/>
+            <counter type="LINE" missed="0" covered="19"/>
+            <counter type="COMPLEXITY" missed="1" covered="13"/>
+            <counter type="METHOD" missed="0" covered="8"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractMembershipCondition" sourcefilename="AbstractMembershipCondition.java">
+            <method name="&lt;init&gt;" desc="(Ljava/util/Collection;)V" line="10">
+                <counter type="INSTRUCTION" missed="0" covered="7"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getValues" desc="()Lcom/google/common/collect/ImmutableSet;" line="15">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="0" covered="10"/>
+            <counter type="LINE" missed="0" covered="4"/>
+            <counter type="COMPLEXITY" missed="0" covered="2"/>
+            <counter type="METHOD" missed="0" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="io/redlock/rql/condition/base/AbstractBooleanCondition" sourcefilename="AbstractBooleanCondition.java">
+            <method name="&lt;init&gt;" desc="()V" line="3">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="3" covered="0"/>
+            <counter type="LINE" missed="1" covered="0"/>
+            <counter type="COMPLEXITY" missed="1" covered="0"/>
+            <counter type="METHOD" missed="1" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </class>
+        <sourcefile name="AbstractCondition.java">
+            <line nr="3" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="8" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="13" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="14" mi="0" ci="1" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="0" covered="10"/>
+            <counter type="LINE" missed="0" covered="4"/>
+            <counter type="COMPLEXITY" missed="0" covered="3"/>
+            <counter type="METHOD" missed="0" covered="3"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="AbstractIntComparisonCondition.java">
+            <line nr="10" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="11" mi="5" ci="0" mb="0" cb="0"/>
+            <line nr="12" mi="3" ci="0" mb="0" cb="0"/>
+            <line nr="13" mi="1" ci="0" mb="0" cb="0"/>
+            <line nr="16" mi="3" ci="0" mb="0" cb="0"/>
+            <line nr="20" mi="3" ci="0" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="17" covered="0"/>
+            <counter type="LINE" missed="6" covered="0"/>
+            <counter type="COMPLEXITY" missed="3" covered="0"/>
+            <counter type="METHOD" missed="3" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </sourcefile>
+        <sourcefile name="MembershipCondition.java"/>
+        <sourcefile name="AbstractIntMembershipCondition.java">
+            <line nr="7" mi="3" ci="0" mb="0" cb="0"/>
+            <line nr="8" mi="1" ci="0" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="4" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="1" covered="0"/>
+            <counter type="METHOD" missed="1" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </sourcefile>
+        <sourcefile name="AbstractSourceOrDestCondition.java">
+            <line nr="10" mi="0" ci="2" mb="0" cb="0"/>
+            <line nr="11" mi="0" ci="5" mb="0" cb="0"/>
+            <line nr="12" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="15" mi="0" ci="3" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="0" covered="11"/>
+            <counter type="LINE" missed="0" covered="4"/>
+            <counter type="COMPLEXITY" missed="0" covered="2"/>
+            <counter type="METHOD" missed="0" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="BooleanCondition.java"/>
+        <sourcefile name="AbstractBooleanCondition.java">
+            <line nr="3" mi="3" ci="0" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="3" covered="0"/>
+            <counter type="LINE" missed="1" covered="0"/>
+            <counter type="COMPLEXITY" missed="1" covered="0"/>
+            <counter type="METHOD" missed="1" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </sourcefile>
+        <sourcefile name="ComparisonOperator.java">
+            <line nr="5" mi="28" ci="0" mb="0" cb="0"/>
+            <line nr="6" mi="13" ci="0" mb="0" cb="0"/>
+            <line nr="9" mi="9" ci="0" mb="2" cb="0"/>
+            <line nr="13" mi="13" ci="0" mb="0" cb="0"/>
+            <line nr="16" mi="9" ci="0" mb="2" cb="0"/>
+            <line nr="20" mi="13" ci="0" mb="0" cb="0"/>
+            <line nr="23" mi="9" ci="0" mb="2" cb="0"/>
+            <line nr="27" mi="13" ci="0" mb="0" cb="0"/>
+            <line nr="30" mi="9" ci="0" mb="2" cb="0"/>
+            <line nr="34" mi="13" ci="0" mb="0" cb="0"/>
+            <line nr="37" mi="10" ci="0" mb="2" cb="0"/>
+            <line nr="41" mi="13" ci="0" mb="0" cb="0"/>
+            <line nr="44" mi="10" ci="0" mb="2" cb="0"/>
+            <line nr="50" mi="4" ci="0" mb="0" cb="0"/>
+            <line nr="51" mi="3" ci="0" mb="0" cb="0"/>
+            <line nr="52" mi="1" ci="0" mb="0" cb="0"/>
+            <line nr="58" mi="6" ci="0" mb="0" cb="0"/>
+            <line nr="63" mi="3" ci="0" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="179" covered="0"/>
+            <counter type="BRANCH" missed="12" covered="0"/>
+            <counter type="LINE" missed="18" covered="0"/>
+            <counter type="COMPLEXITY" missed="22" covered="0"/>
+            <counter type="METHOD" missed="16" covered="0"/>
+            <counter type="CLASS" missed="7" covered="0"/>
+        </sourcefile>
+        <sourcefile name="AbstractStringCondition.java">
+            <line nr="3" mi="0" ci="2" mb="0" cb="0"/>
+            <line nr="5" mi="0" ci="4" mb="0" cb="0"/>
+            <line nr="8" mi="3" ci="0" mb="0" cb="0"/>
+            <line nr="9" mi="1" ci="0" mb="0" cb="0"/>
+            <line nr="12" mi="0" ci="3" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="4" covered="9"/>
+            <counter type="LINE" missed="2" covered="3"/>
+            <counter type="COMPLEXITY" missed="1" covered="2"/>
+            <counter type="METHOD" missed="1" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="IntComparisonCondition.java"/>
+        <sourcefile name="AbstractStringMembershipCondition.java">
+            <line nr="7" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="9" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="10" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="13" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="14" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="17" mi="0" ci="3" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="0" covered="14"/>
+            <counter type="LINE" missed="0" covered="6"/>
+            <counter type="COMPLEXITY" missed="0" covered="3"/>
+            <counter type="METHOD" missed="0" covered="3"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="EndpointType.java">
+            <line nr="5" mi="0" ci="12" mb="0" cb="0"/>
+            <line nr="6" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="7" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="10" mi="5" ci="0" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="5" covered="24"/>
+            <counter type="LINE" missed="1" covered="3"/>
+            <counter type="COMPLEXITY" missed="1" covered="1"/>
+            <counter type="METHOD" missed="1" covered="1"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="Condition.java">
+            <line nr="12" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="16" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="20" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="24" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="28" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="32" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="35" mi="0" ci="2" mb="0" cb="0"/>
+            <line nr="37" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="40" mi="2" ci="0" mb="0" cb="0"/>
+            <line nr="44" mi="1" ci="8" mb="1" cb="1"/>
+            <line nr="45" mi="0" ci="6" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="17" covered="16"/>
+            <counter type="BRANCH" missed="1" covered="1"/>
+            <counter type="LINE" missed="8" covered="3"/>
+            <counter type="COMPLEXITY" missed="9" covered="2"/>
+            <counter type="METHOD" missed="8" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="CompoundCondition.java">
+            <line nr="13" mi="0" ci="2" mb="0" cb="0"/>
+            <line nr="14" mi="0" ci="5" mb="0" cb="0"/>
+            <line nr="15" mi="0" ci="5" mb="0" cb="0"/>
+            <line nr="16" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="38" mi="0" ci="2" mb="0" cb="0"/>
+            <line nr="40" mi="0" ci="10" mb="0" cb="2"/>
+            <line nr="41" mi="0" ci="12" mb="0" cb="4"/>
+            <line nr="44" mi="0" ci="2" mb="0" cb="2"/>
+            <line nr="45" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="47" mi="0" ci="4" mb="0" cb="0"/>
+            <line nr="49" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="51" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="55" mi="0" ci="8" mb="0" cb="0"/>
+            <line nr="59" mi="0" ci="8" mb="0" cb="0"/>
+            <line nr="64" mi="0" ci="8" mb="0" cb="2"/>
+            <line nr="69" mi="1" ci="7" mb="1" cb="1"/>
+            <line nr="74" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="79" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="80" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="82" mi="0" ci="12" mb="0" cb="0"/>
+            <line nr="83" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="84" mi="0" ci="6" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="1" covered="115"/>
+            <counter type="BRANCH" missed="1" covered="11"/>
+            <counter type="LINE" missed="0" covered="22"/>
+            <counter type="COMPLEXITY" missed="1" covered="14"/>
+            <counter type="METHOD" missed="0" covered="9"/>
+            <counter type="CLASS" missed="0" covered="2"/>
+        </sourcefile>
+        <sourcefile name="AbstractMembershipCondition.java">
+            <line nr="10" mi="0" ci="2" mb="0" cb="0"/>
+            <line nr="11" mi="0" ci="4" mb="0" cb="0"/>
+            <line nr="12" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="15" mi="0" ci="3" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="0" covered="10"/>
+            <counter type="LINE" missed="0" covered="4"/>
+            <counter type="COMPLEXITY" missed="0" covered="2"/>
+            <counter type="METHOD" missed="0" covered="2"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="AbstractEnumMembershipCondition.java">
+            <line nr="8" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="9" mi="0" ci="1" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="0" covered="4"/>
+            <counter type="LINE" missed="0" covered="2"/>
+            <counter type="COMPLEXITY" missed="0" covered="1"/>
+            <counter type="METHOD" missed="0" covered="1"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="SourceOrDestCondition.java">
+            <line nr="8" mi="8" ci="0" mb="2" cb="0"/>
+            <line nr="12" mi="8" ci="0" mb="2" cb="0"/>
+            <counter type="INSTRUCTION" missed="16" covered="0"/>
+            <counter type="BRANCH" missed="4" covered="0"/>
+            <counter type="LINE" missed="2" covered="0"/>
+            <counter type="COMPLEXITY" missed="4" covered="0"/>
+            <counter type="METHOD" missed="2" covered="0"/>
+            <counter type="CLASS" missed="1" covered="0"/>
+        </sourcefile>
+        <sourcefile name="StringCondition.java"/>
+        <counter type="INSTRUCTION" missed="246" covered="213"/>
+        <counter type="BRANCH" missed="18" covered="12"/>
+        <counter type="LINE" missed="40" covered="51"/>
+        <counter type="COMPLEXITY" missed="43" covered="30"/>
+        <counter type="METHOD" missed="33" covered="25"/>
+        <counter type="CLASS" missed="11" covered="10"/>
+    </package>
+</report>
