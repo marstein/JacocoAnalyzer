@@ -8,7 +8,8 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, XMLStreamException {
       String fileName = args[1];
-      CoverageXMLReader c = new CoverageXMLReader();
+      CoverageRepository repository = new  CoverageRepository();
+      CoverageXMLReader c = new CoverageXMLReader(repository);
       c.readFromXML(new FileInputStream(fileName));
     }
 }

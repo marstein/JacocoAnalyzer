@@ -4,8 +4,17 @@ import java.io.InputStream;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CoverageXMLReader {
+
+  public static Logger log = LoggerFactory.getLogger(CoverageXMLReader.class);
+  private final ICoverageRepository coverageRepo;
+
+  public CoverageXMLReader(ICoverageRepository repository) {
+    this.coverageRepo = repository;
+  }
 
   public void readFromXML(InputStream is) throws XMLStreamException {
     XMLInputFactory inputFactory = XMLInputFactory.newInstance();
@@ -31,7 +40,7 @@ public class CoverageXMLReader {
           }
           break;
         case XMLStreamReader.END_ELEMENT:
-          break;
+          return;
       }
     }
     throw new XMLStreamException("Premature end of file");
@@ -59,12 +68,13 @@ public class CoverageXMLReader {
       int eventType = reader.next();
       if (eventType == XMLStreamReader.START_ELEMENT) {
         String elementName = reader.getLocalName();
+        log.debug(elementName);
         if (elementName.equals("class")) {
           String className = readAttribute(reader, "name");
           readClass(reader, reportName, packageName, className);
+        } else {
+          return;
         }
-      } else if (eventType == XMLStreamReader.END_ELEMENT) {
-        return;
       }
     }
     throw new XMLStreamException("Premature end of file");
@@ -73,6 +83,9 @@ public class CoverageXMLReader {
 
   private void readClass(XMLStreamReader reader, String reportName, String packageName, String className)
       throws XMLStreamException {
+
+    log.info("reading class " + className);
+    log.debug("debug class " + className);
     while (reader.hasNext()) {
       int eventType = reader.next();
       if (eventType == XMLStreamReader.START_ELEMENT) {
@@ -82,24 +95,17 @@ public class CoverageXMLReader {
           MethodCoverage methodCoverage = new MethodCoverage();
           methodCoverage.setCoverageRunName(reportName);
           methodCoverage.setPackageName(packageName);
+          methodCoverage.setClassName(className);
           methodCoverage.setMethodName(methodName);
           readCounters(reader, methodCoverage);
+          coverageRepo.write(methodCoverage);
+          log.info(methodCoverage.toString());
         }
-      } else if (eventType == XMLStreamReader.END_ELEMENT) {
-        return;
+      } else if (eventType == XMLStreamReader.END_ELEMENT && reader.getLocalName().equals("class")) {
+        return; // keep reading methods until class end tag.
       }
     }
-
     throw new XMLStreamException("Premature end of file");
-  }
-
-  private String readAttribute(XMLStreamReader reader, String attributeName) {
-    for (int i = 0; i < reader.getAttributeCount(); i++) {
-      if (reader.getAttributeName(i).toString().equals(attributeName)) {
-        return reader.getAttributeValue(i);
-      }
-    }
-    throw new IllegalStateException("attribute " + attributeName + " not found!");
   }
 
   private void readCounters(XMLStreamReader reader, MethodCoverage methodCoverage) throws XMLStreamException {
@@ -113,14 +119,17 @@ public class CoverageXMLReader {
           }
           break;
         case XMLStreamReader.END_ELEMENT:
-          return;
+          if (reader.getLocalName().equals("method")) {
+            return;
+          }
+          break;
       }
     }
     throw new XMLStreamException("Premature end of file");
   }
 
   private void readCounter(XMLStreamReader reader, MethodCoverage methodCoverage) throws XMLStreamException {
-    String counterType = reader.getAttributeValue(0);
+    String counterType = readAttribute(reader, "type");
     if (counterType.equals("INSTRUCTION")) {
       methodCoverage.setInstructionsMissed(Integer.parseInt(readAttribute(reader, "missed")));
       methodCoverage.setInstructionsCovered(Integer.parseInt(readAttribute(reader, "covered")));
@@ -137,5 +146,14 @@ public class CoverageXMLReader {
       methodCoverage.setMethodMissed(Integer.parseInt(readAttribute(reader, "missed")));
       methodCoverage.setMethodCovered(Integer.parseInt(readAttribute(reader, "covered")));
     }
+  }
+
+  private String readAttribute(XMLStreamReader reader, String attributeName) {
+    for (int i = 0; i < reader.getAttributeCount(); i++) {
+      if (reader.getAttributeName(i).toString().equals(attributeName)) {
+        return reader.getAttributeValue(i);
+      }
+    }
+    throw new IllegalStateException("attribute " + attributeName + " not found!");
   }
 }
