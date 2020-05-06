@@ -1,7 +1,8 @@
 package io.redlock;
 
-public class CoverageRepository implements ICoverageRepository {
-  @Override public void write(MethodCoverage methodCoverage) {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-  }
+@RepositoryRestResource
+public interface CoverageRepository extends CrudRepository<MethodCoverage, Integer> {
 }

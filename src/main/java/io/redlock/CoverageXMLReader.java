@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 public class CoverageXMLReader {
 
   public static Logger log = LoggerFactory.getLogger(CoverageXMLReader.class);
-  private final ICoverageRepository coverageRepo;
+  private final CoverageRepository coverageRepo;
 
-  public CoverageXMLReader(ICoverageRepository repository) {
+  public CoverageXMLReader(CoverageRepository repository) {
     this.coverageRepo = repository;
   }
 
@@ -98,7 +98,7 @@ public class CoverageXMLReader {
           methodCoverage.setClassName(className);
           methodCoverage.setMethodName(methodName);
           readCounters(reader, methodCoverage);
-          coverageRepo.write(methodCoverage);
+          coverageRepo.save(methodCoverage);
           log.info(methodCoverage.toString());
         }
       } else if (eventType == XMLStreamReader.END_ELEMENT && reader.getLocalName().equals("class")) {

@@ -1,6 +1,16 @@
 package io.redlock;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import lombok.Data;
+
+@Entity
+@Data // Lombok getters and setters.
 public class MethodCoverage {
+  @Id @GeneratedValue(strategy = GenerationType.AUTO) private int id;
+
   private String coverageRunName;
   private String packageName;
   private String className;
@@ -17,9 +27,7 @@ public class MethodCoverage {
   private int complexityCovered;
   private int complexityMissed;
 
-
-  public MethodCoverage() {
-  }
+  public MethodCoverage() {}
 
   public MethodCoverage(String packageName, String coverageRunName, String className, String methodName,
       int instructionsCovered, int instructionsMissed, int methodCovered, int methodMissed, int linesCovered,
@@ -35,102 +43,6 @@ public class MethodCoverage {
     this.linesCovered = linesCovered;
     this.linesMissed = linesMissed;
     this.complexityCovered = complexityCovered;
-    this.complexityMissed = complexityMissed;
-  }
-
-  public void setPackageName(String packageName) {
-    this.packageName = packageName;
-  }
-
-  public String getPackageName() {
-    return packageName;
-  }
-
-  public String getCoverageRunName() {
-    return coverageRunName;
-  }
-
-  public void setCoverageRunName(String coverageRunName) {
-    this.coverageRunName = coverageRunName;
-  }
-
-  public String getClassName() {
-    return className;
-  }
-
-  public void setClassName(String className) {
-    this.className = className;
-  }
-
-  public String getMethodName() {
-    return methodName;
-  }
-
-  public void setMethodName(String methodName) {
-    this.methodName = methodName;
-  }
-
-  public int getInstructionsCovered() {
-    return instructionsCovered;
-  }
-
-  public void setInstructionsCovered(int instructionsCovered) {
-    this.instructionsCovered = instructionsCovered;
-  }
-
-  public int getInstructionsMissed() {
-    return instructionsMissed;
-  }
-
-  public void setInstructionsMissed(int instructionsMissed) {
-    this.instructionsMissed = instructionsMissed;
-  }
-
-  public int getMethodCovered() {
-    return methodCovered;
-  }
-
-  public void setMethodCovered(int methodCovered) {
-    this.methodCovered = methodCovered;
-  }
-
-  public int getMethodMissed() {
-    return methodMissed;
-  }
-
-  public void setMethodMissed(int methodMissed) {
-    this.methodMissed = methodMissed;
-  }
-
-  public int getLinesCovered() {
-    return linesCovered;
-  }
-
-  public void setLinesCovered(int linesCovered) {
-    this.linesCovered = linesCovered;
-  }
-
-  public int getLinesMissed() {
-    return linesMissed;
-  }
-
-  public void setLinesMissed(int linesMissed) {
-    this.linesMissed = linesMissed;
-  }
-
-  public int getComplexityCovered() {
-    return complexityCovered;
-  }
-
-  public void setComplexityCovered(int complexityCovered) {
-    this.complexityCovered = complexityCovered;
-  }
-
-  public int getComplexityMissed() {
-    return complexityMissed;
-  }
-
-  public void setComplexityMissed(int complexityMissed) {
     this.complexityMissed = complexityMissed;
   }
 
