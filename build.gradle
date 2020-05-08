@@ -1,7 +1,6 @@
-
 plugins {
     id 'idea'
-    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'org.springframework.boot' version '2.2.7.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
 }
@@ -20,7 +19,8 @@ repositories {
 
 bootJar {
     baseName = 'io-redlock-springbootjpa'
-    version =  '0.1.0'
+    version = '0.1.0'
+    mainClassName = 'io.redlock.SpringBootJpaApplication'
 }
 
 dependencies {
@@ -40,6 +40,9 @@ dependencies {
 //    compileOnly('org.projectlombok:lombok')
     compileOnly 'org.projectlombok:lombok:1.18.12'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    // https://mvnrepository.com/artifact/commons-cli/commons-cli
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'

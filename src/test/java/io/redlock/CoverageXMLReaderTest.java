@@ -1,6 +1,5 @@
 package io.redlock;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -10,31 +9,31 @@ import org.junit.jupiter.api.Test;
 
 class CoverageXMLReaderTest {
 
-  private static class TestRepo<T> implements CoverageRepository{
-    public List<T> methodCoverageList = new ArrayList<>();
+  private static class TestRepo<MethodCoverage, Integer> implements CoverageRepository {
+    public List<MethodCoverage> methodCoverageList = new ArrayList<>();
 
-    @Override public <S extends MethodCoverage> S save(S entity) {
-      methodCoverageList.add((T) entity);
+    @Override public <S extends io.redlock.MethodCoverage> S save(S entity) {
+      methodCoverageList.add((MethodCoverage) entity);
       return entity;
     }
 
-    @Override public <S extends MethodCoverage> Iterable<S> saveAll(Iterable<S> entities) {
+    @Override public <S extends io.redlock.MethodCoverage> Iterable<S> saveAll(Iterable<S> entities) {
       return null;
     }
 
-    @Override public Optional<MethodCoverage> findById(Integer integer) {
+    @Override public Optional<io.redlock.MethodCoverage> findById(java.lang.Integer integer) {
       return Optional.empty();
     }
 
-    @Override public boolean existsById(Integer integer) {
+    @Override public boolean existsById(java.lang.Integer integer) {
       return false;
     }
 
-    @Override public Iterable<MethodCoverage> findAll() {
+    @Override public Iterable<io.redlock.MethodCoverage> findAll() {
       return null;
     }
 
-    @Override public Iterable<MethodCoverage> findAllById(Iterable<Integer> integers) {
+    @Override public Iterable<io.redlock.MethodCoverage> findAllById(Iterable<java.lang.Integer> integers) {
       return null;
     }
 
@@ -42,15 +41,15 @@ class CoverageXMLReaderTest {
       return 0;
     }
 
-    @Override public void deleteById(Integer integer) {
+    @Override public void deleteById(java.lang.Integer integer) {
 
     }
 
-    @Override public void delete(MethodCoverage entity) {
+    @Override public void delete(io.redlock.MethodCoverage entity) {
 
     }
 
-    @Override public void deleteAll(Iterable<? extends MethodCoverage> entities) {
+    @Override public void deleteAll(Iterable<? extends io.redlock.MethodCoverage> entities) {
 
     }
 
@@ -60,13 +59,19 @@ class CoverageXMLReaderTest {
   }
 
   @Test void readFromXML() throws XMLStreamException {
-    TestRepo testRepo = new TestRepo();
+    TestRepo<MethodCoverage, Integer> testRepo = new TestRepo<>();
     CoverageXMLReader c = new CoverageXMLReader(testRepo);
-    c.readFromXML(Thread.currentThread().getContextClassLoader().getResourceAsStream("sample.xml"));
+    c.readFromXML(Thread.currentThread().getContextClassLoader().getResourceAsStream("sample.xml"), "sprint test");
     Assertions.assertEquals(testRepo.methodCoverageList.size(), 58);
-    Assertions.assertEquals("MethodCoverage{coverageRunName='redlock-search', packageName='io/redlock/rql/condition/base', "
-        + "className='io/redlock/rql/condition/base/AbstractIntMembershipCondition', methodName='<init>', "
-        + "instructionsCovered=0, instructionsMissed=4, methodCovered=0, methodMissed=1, linesCovered=0, "
-        + "linesMissed=2, complexityCovered=0, complexityMissed=1}", testRepo.methodCoverageList.get(3).toString());
+    MethodCoverage thirdCoverageMethod = testRepo.methodCoverageList.get(3);
+    Assertions.assertEquals("io/redlock/rql/condition/base/AbstractIntMembershipCondition",
+        thirdCoverageMethod.getClassName(),
+        "class name");
+    Assertions.assertEquals("<init>",
+        thirdCoverageMethod.getMethodName(),
+        "method name " + thirdCoverageMethod.toString());
+    Assertions.assertEquals(1,
+        thirdCoverageMethod.getComplexityMissed(),
+        "complexity missed " + thirdCoverageMethod.toString());
   }
 }

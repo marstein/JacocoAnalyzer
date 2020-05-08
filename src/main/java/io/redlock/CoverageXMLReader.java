@@ -16,12 +16,12 @@ public class CoverageXMLReader {
     this.coverageRepo = repository;
   }
 
-  public void readFromXML(InputStream is) throws XMLStreamException {
+  public void readFromXML(InputStream is, String coverageRun) throws XMLStreamException {
     XMLInputFactory inputFactory = XMLInputFactory.newInstance();
     XMLStreamReader reader = null;
     try {
       reader = inputFactory.createXMLStreamReader(is);
-      readDocument(reader);
+      readDocument(reader, coverageRun);
     } finally {
       if (reader != null) {
         reader.close();
@@ -29,14 +29,15 @@ public class CoverageXMLReader {
     }
   }
 
-  private void readDocument(XMLStreamReader reader) throws XMLStreamException {
+  private void readDocument(XMLStreamReader reader, String coverageRun) throws XMLStreamException {
     while (reader.hasNext()) {
       int eventType = reader.next();
       switch (eventType) {
         case XMLStreamReader.START_ELEMENT:
           String elementName = reader.getLocalName();
           if (elementName.equals("report")) {
-            readPackage(reader, readAttribute(reader, "name"));
+            log.info("reading report {}", readAttribute(reader, "name"));
+            readPackage(reader, readAttribute(reader, "name"), coverageRun);
           }
           break;
         case XMLStreamReader.END_ELEMENT:
@@ -46,14 +47,15 @@ public class CoverageXMLReader {
     throw new XMLStreamException("Premature end of file");
   }
 
-  private void readPackage(XMLStreamReader reader, String reportName) throws XMLStreamException {
+  private void readPackage(XMLStreamReader reader, String reportName, String coverageRun) throws XMLStreamException {
     while (reader.hasNext()) {
       int eventType = reader.next();
       switch (eventType) {
         case XMLStreamReader.START_ELEMENT:
           String elementName = reader.getLocalName();
           if (elementName.equals("package")) {
-            readClasses(reader, reportName, readAttribute(reader, "name"));
+            log.info("reading package {}", readAttribute(reader, "name"));
+            readClasses(reader, reportName, readAttribute(reader, "name"), coverageRun);
           }
           break;
         case XMLStreamReader.END_ELEMENT:
@@ -63,15 +65,16 @@ public class CoverageXMLReader {
     throw new XMLStreamException("Premature end of file");
   }
 
-  private void readClasses(XMLStreamReader reader, String reportName, String packageName) throws XMLStreamException {
+  private void readClasses(XMLStreamReader reader, String reportName, String packageName, String coverageRun) throws XMLStreamException {
     while (reader.hasNext()) {
       int eventType = reader.next();
       if (eventType == XMLStreamReader.START_ELEMENT) {
         String elementName = reader.getLocalName();
-        log.debug(elementName);
         if (elementName.equals("class")) {
+          log.info("reading class {}", readAttribute(reader, "name"));
           String className = readAttribute(reader, "name");
-          readClass(reader, reportName, packageName, className);
+          String sourceFileName = readAttribute(reader, "sourcefilename");
+          readClass(reader, reportName, packageName, className, sourceFileName, coverageRun);
         } else {
           return;
         }
@@ -81,11 +84,9 @@ public class CoverageXMLReader {
   }
 
 
-  private void readClass(XMLStreamReader reader, String reportName, String packageName, String className)
+  private void readClass(XMLStreamReader reader, String reportName, String packageName, String className,
+      String sourcefilename, String coverageRun)
       throws XMLStreamException {
-
-    log.info("reading class " + className);
-    log.debug("debug class " + className);
     while (reader.hasNext()) {
       int eventType = reader.next();
       if (eventType == XMLStreamReader.START_ELEMENT) {
@@ -93,13 +94,14 @@ public class CoverageXMLReader {
         if (elementName.equals("method")) {
           String methodName = readAttribute(reader, "name");
           MethodCoverage methodCoverage = new MethodCoverage();
-          methodCoverage.setCoverageRunName(reportName);
+          methodCoverage.setSourcefileName(sourcefilename);
+          methodCoverage.setReportName(reportName);
+          methodCoverage.setCoverageRunName(coverageRun);
           methodCoverage.setPackageName(packageName);
           methodCoverage.setClassName(className);
           methodCoverage.setMethodName(methodName);
           readCounters(reader, methodCoverage);
           coverageRepo.save(methodCoverage);
-          log.info(methodCoverage.toString());
         }
       } else if (eventType == XMLStreamReader.END_ELEMENT && reader.getLocalName().equals("class")) {
         return; // keep reading methods until class end tag.
