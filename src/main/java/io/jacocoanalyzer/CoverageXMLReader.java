@@ -1,4 +1,4 @@
-package io.redlock;
+package io.jacocoanalyzer;
 
 import java.io.InputStream;
 import javax.xml.stream.XMLInputFactory;
@@ -166,7 +166,6 @@ public class CoverageXMLReader {
     try {
       reader = XMLInputFactory.newInstance().createXMLStreamReader(is);
       visit(new Watcher(coverageRun), reader);
-      //      readDocument(reader, coverageRun);
     } finally {
       if (reader != null) {
         reader.close();

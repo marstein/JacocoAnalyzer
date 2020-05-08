@@ -1,10 +1,11 @@
-package io.redlock;
+package io.jacocoanalyzer;
 
 import static java.lang.System.exit;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Date;
 import javax.xml.stream.XMLStreamException;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -24,19 +25,12 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SpringBootJpaApplication {
   static private final Logger log = LoggerFactory.getLogger("spring boot");
+  static private CommandLine commandLine;
 
   public static void main(String[] args) {
     log.info("Application started with option names : {}", Arrays.toString(args));
-    CommandLine cmd = getCommandline(args);
-    boolean startWebServer = !(cmd.getOptionValue("webserver") == null);
-    String filePath = cmd.getOptionValue("file");
-    if (filePath != null) {
-      SpringCommandlineApp.mainFunction(args);
-    }
-
-    if (startWebServer) {
-      SpringApplication.run(SpringBootJpaApplication.class, args);
-    }
+    commandLine = getCommandline(args);
+    SpringApplication.run(SpringBootJpaApplication.class, args);
   }
 
   public static CommandLine getCommandline(String[] args) {
@@ -62,12 +56,23 @@ public class SpringBootJpaApplication {
     return null;
   }
 
+  @Autowired FileUploaderBean fileUploaderBean;
+
   @Bean ApplicationRunner init(CoverageRepository repository) {
+    if (commandLine.hasOption('f')) {
+      String filePath = commandLine.getOptionValue("file");
+      String coverageRunName = commandLine.getOptionValue("runName");
+      if (coverageRunName == null) {
+        coverageRunName = (new Date()).toString();
+      }
+      File jacocoXmlFileToUpload = new File(filePath);
+      log.info("importing file {}", jacocoXmlFileToUpload);
+      int result = fileUploaderBean.readAndUploadFile(jacocoXmlFileToUpload, coverageRunName);
+      exit(result);
+    }
     log.info("starting web server");
     return args -> {
       repository.findAll().forEach(System.out::println);
     };
   }
-
-  @Autowired FileUploaderBean fileUploaderBean;
 }

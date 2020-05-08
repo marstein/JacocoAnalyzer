@@ -1,4 +1,4 @@
-package io.redlock;
+package io.jacocoanalyzer;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import lombok.Data;
 
-@Entity
+@Entity // Generated DB table automatically. See hibernate.auto-ddl
 @Data // Lombok getters and setters.
 public class MethodCoverage {
   @Id @GeneratedValue(strategy = GenerationType.AUTO) private int id;
@@ -40,24 +40,4 @@ public class MethodCoverage {
         + linesCovered + ", linesMissed=" + linesMissed + ", complexityCovered=" + complexityCovered
         + ", complexityMissed=" + complexityMissed + '}';
   }
-
-  public MethodCoverage(String packageName, String reportName, String coverageRunName, String className,
-      String sourcefileName, String methodName, int instructionsCovered, int instructionsMissed, int methodCovered,
-      int methodMissed, int linesCovered, int linesMissed, int complexityCovered, int complexityMissed) {
-    this.packageName = packageName;
-    this.reportName = reportName;
-    this.coverageRunName = coverageRunName;
-    this.className = className;
-    this.sourcefileName = sourcefileName;
-    this.methodName = methodName;
-    this.instructionsCovered = instructionsCovered;
-    this.instructionsMissed = instructionsMissed;
-    this.methodCovered = methodCovered;
-    this.methodMissed = methodMissed;
-    this.linesCovered = linesCovered;
-    this.linesMissed = linesMissed;
-    this.complexityCovered = complexityCovered;
-    this.complexityMissed = complexityMissed;
-  }
-
 }

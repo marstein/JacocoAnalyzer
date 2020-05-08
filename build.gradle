@@ -9,7 +9,7 @@ repositories {
     mavenCentral()
 }
 
-group = 'io.redlock'
+group = 'io.jacocoanalyzer'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_11
 
@@ -37,23 +37,18 @@ dependencies {
     implementation('org.postgresql:postgresql:9.4-1206-jdbc42')
 
     // Lombok autogenerates things like getters and setters
-//    compileOnly('org.projectlombok:lombok')
     compileOnly 'org.projectlombok:lombok:1.18.12'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
 
     // https://mvnrepository.com/artifact/org.jetbrains/annotations
     implementation group: 'org.jetbrains', name: 'annotations', version: '19.0.0'
 
-// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
-// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
-    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
-// https://mvnrepository.com/artifact/ch.qos.logback/logback-core
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-core
     implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
-
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
     testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
-
 
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
