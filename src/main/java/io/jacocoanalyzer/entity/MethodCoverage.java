@@ -1,4 +1,4 @@
-package io.jacocoanalyzer;
+package io.jacocoanalyzer.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

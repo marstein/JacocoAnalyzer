@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Coverage Analysis</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
+
+</head>
+<body>
+<table>
+    <tr>
+        <td>package</td>
+        <td>instructions missed</td>
+    </tr>
+    <tr th:each="methodCoverage: ${coverages}">
+        <td th:text="${methodCoverage.packageName}">Package</td>
+        <td th:text="${methodCoverage.instructionsMissed}">Instructions Missed</td>
+    </tr>
+</table>
+</body>
+</html>

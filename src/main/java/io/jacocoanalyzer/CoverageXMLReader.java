@@ -1,5 +1,7 @@
 package io.jacocoanalyzer;
 
+import io.jacocoanalyzer.entity.CoverageRepository;
+import io.jacocoanalyzer.entity.MethodCoverage;
 import java.io.InputStream;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;

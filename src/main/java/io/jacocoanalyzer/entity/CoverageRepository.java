@@ -1,4 +1,4 @@
-package io.jacocoanalyzer;
+package io.jacocoanalyzer.entity;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

@@ -2,11 +2,10 @@ package io.jacocoanalyzer;
 
 import static java.lang.System.exit;
 
+import io.jacocoanalyzer.entity.CoverageRepository;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Date;
-import javax.xml.stream.XMLStreamException;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -21,6 +20,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class SpringBootJpaApplication {
@@ -59,7 +59,7 @@ public class SpringBootJpaApplication {
   @Autowired FileUploaderBean fileUploaderBean;
 
   @Bean ApplicationRunner init(CoverageRepository repository) {
-    if (commandLine.hasOption('f')) {
+    if (commandLine != null && commandLine.hasOption('f')) {
       String filePath = commandLine.getOptionValue("file");
       String coverageRunName = commandLine.getOptionValue("runName");
       if (coverageRunName == null) {

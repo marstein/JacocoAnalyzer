@@ -1,5 +1,7 @@
 package io.jacocoanalyzer;
 
+import io.jacocoanalyzer.entity.CoverageRepository;
+import io.jacocoanalyzer.entity.MethodCoverage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,16 +14,16 @@ class CoverageXMLReaderTest {
   private static class TestRepo<MethodCoverage, Integer> implements CoverageRepository {
     public List<MethodCoverage> methodCoverageList = new ArrayList<>();
 
-    @Override public <S extends io.jacocoanalyzer.MethodCoverage> S save(S entity) {
+    @Override public <S extends io.jacocoanalyzer.entity.MethodCoverage> S save(S entity) {
       methodCoverageList.add((MethodCoverage) entity);
       return entity;
     }
 
-    @Override public <S extends io.jacocoanalyzer.MethodCoverage> Iterable<S> saveAll(Iterable<S> entities) {
+    @Override public <S extends io.jacocoanalyzer.entity.MethodCoverage> Iterable<S> saveAll(Iterable<S> entities) {
       return null;
     }
 
-    @Override public Optional<io.jacocoanalyzer.MethodCoverage> findById(java.lang.Integer integer) {
+    @Override public Optional<io.jacocoanalyzer.entity.MethodCoverage> findById(java.lang.Integer integer) {
       return Optional.empty();
     }
 
@@ -29,11 +31,11 @@ class CoverageXMLReaderTest {
       return false;
     }
 
-    @Override public Iterable<io.jacocoanalyzer.MethodCoverage> findAll() {
+    @Override public Iterable<io.jacocoanalyzer.entity.MethodCoverage> findAll() {
       return null;
     }
 
-    @Override public Iterable<io.jacocoanalyzer.MethodCoverage> findAllById(Iterable<java.lang.Integer> integers) {
+    @Override public Iterable<io.jacocoanalyzer.entity.MethodCoverage> findAllById(Iterable<java.lang.Integer> integers) {
       return null;
     }
 
@@ -45,11 +47,11 @@ class CoverageXMLReaderTest {
 
     }
 
-    @Override public void delete(io.jacocoanalyzer.MethodCoverage entity) {
+    @Override public void delete(io.jacocoanalyzer.entity.MethodCoverage entity) {
 
     }
 
-    @Override public void deleteAll(Iterable<? extends io.jacocoanalyzer.MethodCoverage> entities) {
+    @Override public void deleteAll(Iterable<? extends io.jacocoanalyzer.entity.MethodCoverage> entities) {
 
     }
 
