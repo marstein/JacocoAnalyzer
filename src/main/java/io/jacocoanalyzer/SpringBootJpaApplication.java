@@ -72,7 +72,7 @@ public class SpringBootJpaApplication {
     }
     log.info("starting web server");
     return args -> {
-      repository.findAll().forEach(System.out::println);
+//      repository.findAll().forEach(System.out::println);
     };
   }
 }

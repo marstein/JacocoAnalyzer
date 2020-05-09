@@ -19,6 +19,7 @@
     <tr th:each="methodCoverage: ${coverages}">
         <td th:text="${methodCoverage.packageName}">Package</td>
         <td th:text="${methodCoverage.instructionsMissed}">Instructions Missed</td>
+        <td th:text="${methodCoverage.instructionsCovered}">Instructions Covered</td>
     </tr>
 </table>
 </body>
