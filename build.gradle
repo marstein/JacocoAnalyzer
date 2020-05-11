@@ -11,14 +11,17 @@ repositories {
 
 group = 'io.jacocoanalyzer'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 repositories {
     mavenCentral()
 }
 
 bootJar {
-    archiveBaseName = 'io-redlock-springbootjpa'
+    archiveBaseName = 'redlock-jacoco-analyzer'
     archiveVersion = '0.1.0'
     mainClassName = 'io.redlock.SpringBootJpaApplication'
 }

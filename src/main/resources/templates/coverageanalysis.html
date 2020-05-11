@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -13,13 +13,24 @@
 <body>
 <table>
     <tr>
+        <td>run</td>
         <td>package</td>
-        <td>instructions missed</td>
+        <td>lines</td>
+        <td>lines covered</td>
+        <td>lines missed</td>
+        <td>coverage avg %</td>
+        <td>crap</td>
+        <td>complexity</td>
     </tr>
-    <tr th:each="methodCoverage: ${coverages}">
-        <td th:text="${methodCoverage.packageName}">Package</td>
-        <td th:text="${methodCoverage.instructionsMissed}">Instructions Missed</td>
-        <td th:text="${methodCoverage.instructionsCovered}">Instructions Covered</td>
+    <tr th:each="coverage: ${coverages}">
+        <td th:text="${coverage.coverageRunName}">Run</td>
+        <td th:text="${coverage.packageName}">Package</td>
+        <td th:text="${coverage.linesum}">Lines</td>
+        <td th:text="${coverage.linescoveredsum}">Lines covered</td>
+        <td th:text="${coverage.linesmissedsum}">Lines missed</td>
+        <td th:text="${coverage.covavgpercent}">Coverage Avg%</td>
+        <td th:text="${coverage.crapsum}">CRAP</td>
+        <td th:text="${coverage.compsum}">complexity</td>
     </tr>
 </table>
 </body>

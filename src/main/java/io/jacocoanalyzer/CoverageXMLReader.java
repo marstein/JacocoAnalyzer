@@ -58,7 +58,7 @@ public class CoverageXMLReader {
     }
 
     public void acceptEndClass() {
-      log.info("reading class {}, file {} done", className, sourceFileName);
+      log.info("class {}, file {} done", className, sourceFileName);
       className = null;
       sourceFileName = null;
     }
@@ -66,7 +66,7 @@ public class CoverageXMLReader {
     MethodCoverage methodCoverage;
     private int methodCounter = 0;
 
-    public void acceptStartMethod(XMLStreamReader reader) throws XMLStreamException {
+    public void acceptStartMethod(XMLStreamReader reader) {
       String methodName = readAttribute(reader, "name");
       methodCoverage = new MethodCoverage();
       methodCoverage.setSourcefileName(sourceFileName);
@@ -84,10 +84,7 @@ public class CoverageXMLReader {
       methodCoverage = null;
     }
 
-    public void acceptEndCounter() {
-    }
-
-    public void acceptStartCounter(XMLStreamReader reader) throws XMLStreamException {
+    public void acceptStartCounter(XMLStreamReader reader) {
       if (methodCoverage == null) {
         return; // do not record class or package level counters.
       }
@@ -110,6 +107,9 @@ public class CoverageXMLReader {
           methodCoverage.setMethodCovered(Integer.parseInt(readAttribute(reader, "covered")));
           break;
       }
+    }
+
+    public void acceptEndCounter() {
     }
   }
 
