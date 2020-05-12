@@ -1,10 +1,12 @@
 spring:
   jpa:
     hibernate:
-#      ddl-auto: create
-      ddl-auto: none
+      ddl-auto: create
+#      ddl-auto: none
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: "jdbc:postgresql://localhost:5432/rqlcoverage"
-    username: postgres
-    password: postgres
+    url: "jdbc:postgresql://${DATABASE_HOST}:5432/${DATABASE_NAME}"
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASS}
+server:
+  port: 8080

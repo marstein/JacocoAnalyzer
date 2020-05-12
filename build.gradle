@@ -3,6 +3,7 @@ plugins {
     id 'org.springframework.boot' version '2.2.7.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
+    id 'com.google.cloud.tools.jib' version '2.2.0'
 }
 
 repositories {
@@ -16,14 +17,19 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+// jibDockerBuild target. Run with docker run -p 8080:8080 jacocoanalyzer/rqlcoverage
+jib.to.image = 'jacocoanalyzer/rqlcoverage'
+
 repositories {
     mavenCentral()
 }
 
 bootJar {
-    archiveBaseName = 'redlock-jacoco-analyzer'
-    archiveVersion = '0.1.0'
-    mainClassName = 'io.redlock.SpringBootJpaApplication'
+//    archiveBaseName = 'redlock-jacoco-analyzer'
+//    archiveVersion = '0.1.0'
+//    archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
+    archiveFileName = "redlock-jacoco-analyzer.${archiveExtension.get()}"
+    mainClassName = 'io.jacocoanalyzer.SpringBootJpaApplication'
 }
 
 dependencies {

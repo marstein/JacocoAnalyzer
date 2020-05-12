@@ -1,0 +1,35 @@
+# start with docker-compose up -d
+version: "3"
+
+services:
+  database:
+    image: postgres:12
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=rqlcoverage
+    volumes:
+      - coverage-db:/var/lib/postgresql/data
+
+  jacocoanalyzer:
+    image: jacocoanalyzer/rqlcoverage:latest
+    restart: always
+    environment:
+      - DATABASE_USER=postgres
+      - DATABASE_PASS=postgres
+      - DATABASE_NAME=rqlcoverage
+      - DATABASE_HOST=database
+    depends_on:
+      - database
+    links:
+      - database
+    ports:
+      - 8080:8080
+    volumes:
+      - ./import:/opt/app/import
+    cap_drop:
+      - all
+
+volumes:
+  coverage-db:
