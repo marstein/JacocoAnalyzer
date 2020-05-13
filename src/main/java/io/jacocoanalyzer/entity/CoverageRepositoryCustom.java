@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface CoverageRepositoryCustom {
   List<PackageSumCoverage> sumByPackage();
+  void deleteCoverageRun(String coverageRunName);
 }
