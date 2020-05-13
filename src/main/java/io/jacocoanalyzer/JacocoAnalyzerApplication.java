@@ -20,17 +20,20 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class SpringBootJpaApplication {
+public class JacocoAnalyzerApplication {
   static private final Logger log = LoggerFactory.getLogger("spring boot");
   static private CommandLine commandLine;
+
+  public JacocoAnalyzerApplication(FileUploaderBean fileUploaderBean) {
+    this.fileUploaderBean = fileUploaderBean;
+  }
 
   public static void main(String[] args) {
     log.info("Application started with option names : {}", Arrays.toString(args));
     commandLine = getCommandline(args);
-    SpringApplication.run(SpringBootJpaApplication.class, args);
+    SpringApplication.run(JacocoAnalyzerApplication.class, args);
   }
 
   public static CommandLine getCommandline(String[] args) {
@@ -56,7 +59,7 @@ public class SpringBootJpaApplication {
     return null;
   }
 
-  @Autowired FileUploaderBean fileUploaderBean;
+  final FileUploaderBean fileUploaderBean;
 
   @Bean ApplicationRunner init(CoverageRepository repository) {
     if (commandLine != null && commandLine.hasOption('f')) {

@@ -8,7 +8,7 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/rqlcoverage</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="JacocoSpringBootJpaApplication.main/Hibernate" uuid="1458b16b-9c42-499b-b79c-76ea9a7fcd57">
-      <driver-ref>greenplum</driver-ref>
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>Hibernate</remarks>

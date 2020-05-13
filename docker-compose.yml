@@ -13,7 +13,7 @@ services:
       - coverage-db:/var/lib/postgresql/data
 
   jacocoanalyzer:
-    image: jacocoanalyzer/rqlcoverage:latest
+    image: marstein65/jacocoanalyzer:latest
     restart: always
     environment:
       - DATABASE_USER=postgres

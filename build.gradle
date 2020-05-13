@@ -11,25 +11,31 @@ repositories {
 }
 
 group = 'io.jacocoanalyzer'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.3'
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
 }
 
 // jibDockerBuild target. Run with docker run -p 8080:8080 jacocoanalyzer/rqlcoverage
-jib.to.image = 'jacocoanalyzer/rqlcoverage'
+jib.to.image = 'marstein65/jacocoanalyzer'
+tasks.build.dependsOn tasks.jib
 
 repositories {
     mavenCentral()
 }
 
 bootJar {
-//    archiveBaseName = 'redlock-jacoco-analyzer'
-//    archiveVersion = '0.1.0'
-//    archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
-    archiveFileName = "redlock-jacoco-analyzer.${archiveExtension.get()}"
-    mainClassName = 'io.jacocoanalyzer.SpringBootJpaApplication'
+    // The base name is in the settings.gradle file!
+    archiveFileName = "${archiveBaseName.get()}.${archiveVersion.get()}.${archiveExtension.get()}"
+    mainClassName = 'io.jacocoanalyzer.JacocoAnalyzerApplication'
+}
+
+bootRun {
+    environment([DATABASE_USER: "postgres",
+                 DATABASE_PASS: 'postgres',
+                 DATABASE_NAME: 'rqlcoverage',
+                 DATABASE_HOST: 'localhost'])
 }
 
 dependencies {
@@ -72,4 +78,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    environment([DATABASE_USER: "postgres",
+                 DATABASE_PASS: 'postgres',
+                 DATABASE_NAME: 'rqlcoverage',
+                 DATABASE_HOST: 'localhost'])
 }

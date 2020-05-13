@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Coverage Analysis</title>
+    <title>Jacoco analyzer</title>
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/site.css"/>
-
 </head>
+<p>Jacoco Analyzer</p>
 <body>
-<table>
+<table class="greyGridTable">
+    <thead>
     <tr>
-        <td>run</td>
-        <td>package</td>
-        <td>lines</td>
-        <td>lines covered</td>
-        <td>lines missed</td>
-        <td>coverage avg %</td>
-        <td>crap</td>
-        <td>complexity</td>
+        <th>Run</th>
+        <th>package</th>
+        <th>lines</th>
+        <th>lines covered</th>
+        <th>lines missed</th>
+        <th>coverage avg %</th>
+        <th>crap</th>
+        <th>complexity</th>
     </tr>
+    </thead>
     <tr th:each="coverage: ${coverages}">
         <td th:text="${coverage.coverageRunName}">Run</td>
         <td th:text="${coverage.packageName}">Package</td>
