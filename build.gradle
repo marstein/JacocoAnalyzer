@@ -18,8 +18,18 @@ java {
 }
 
 // jibDockerBuild target. Run with docker run -p 8080:8080 jacocoanalyzer/rqlcoverage
-jib.to.image = 'marstein65/jacocoanalyzer'
+//jib.to.image = 'marstein65/jacocoanalyzer'
 tasks.build.dependsOn tasks.jib
+jib {
+    from {
+        image = 'marstein65/jacocoanalyzer:latest'
+    }
+    to {
+        image = 'gcr.io/turing-runner-277119/jacocoanalyzer'
+        credHelper = 'gcr'
+    }
+}
+
 
 repositories {
     mavenCentral()
@@ -74,6 +84,7 @@ dependencies {
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     testImplementation('org.springframework.security:spring-security-test')
+    testImplementation('com.h2database:h2')
 }
 
 test {
