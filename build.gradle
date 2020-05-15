@@ -19,16 +19,26 @@ java {
 
 // jibDockerBuild target. Run with docker run -p 8080:8080 jacocoanalyzer/rqlcoverage
 //jib.to.image = 'marstein65/jacocoanalyzer'
-tasks.build.dependsOn tasks.jib
+//tasks.build.dependsOn tasks.jib
+/*
 jib {
     from {
-        image = 'marstein65/jacocoanalyzer:latest'
+        image = 'adoptopenjdk/openjdk11'
     }
     to {
         image = 'gcr.io/turing-runner-277119/jacocoanalyzer'
         credHelper = 'gcr'
     }
+    tags {
+        tag = latest
+    }
+    container {
+        mainClass = 'io.jacocoanalyzer.JacocoAnalyzerApplication'
+        args = ['-w']
+        user = 'spring:spring'
+    }
 }
+*/
 
 
 repositories {
@@ -89,6 +99,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    // remove for H2 testing.
     environment([DATABASE_USER: "postgres",
                  DATABASE_PASS: 'postgres',
                  DATABASE_NAME: 'rqlcoverage',

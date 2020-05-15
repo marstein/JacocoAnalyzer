@@ -10,7 +10,7 @@ footer{
 table.greyGridTable {
     border: 2px solid #FFFFFF;
     width: 100%;
-    text-align: center;
+    text-align: left;
     border-collapse: collapse;
 }
 table.greyGridTable td, table.greyGridTable th {

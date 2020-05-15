@@ -1,7 +1,7 @@
 package io.jacocoanalyzer.web.application;
 
 import io.jacocoanalyzer.entity.CoverageRepositoryCustom;
-import io.jacocoanalyzer.entity.PackageSumCoverage;
+import io.jacocoanalyzer.entity.ReportSumCoverage;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class CoverageAnalysisController {
 
   @RequestMapping(method = RequestMethod.GET) public String getCoverageAnalysis(Model model) {
     log.info("Getting coverage analysis!");
-    List<PackageSumCoverage> coverages = coverageRepositoryCustom.sumByPackage();
+    List<ReportSumCoverage> coverages = coverageRepositoryCustom.sumByPackage();
     model.addAttribute("coverages", coverages);
     log.info("created HTML page with {} coverages", coverages.size());
     return "coverageanalysis";

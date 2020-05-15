@@ -17,7 +17,7 @@
     <thead>
     <tr>
         <th>Run</th>
-        <th>package</th>
+        <th>Report/Module</th>
         <th>lines</th>
         <th>lines covered</th>
         <th>lines missed</th>
@@ -28,7 +28,7 @@
     </thead>
     <tr th:each="coverage: ${coverages}">
         <td th:text="${coverage.coverageRunName}">Run</td>
-        <td th:text="${coverage.packageName}">Package</td>
+        <td th:text="${coverage.reportName}">Report</td>
         <td th:text="${coverage.linesum}">Lines</td>
         <td th:text="${coverage.linescoveredsum}">Lines covered</td>
         <td th:text="${coverage.linesmissedsum}">Lines missed</td>

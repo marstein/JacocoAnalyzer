@@ -1,6 +1,5 @@
 package io.jacocoanalyzer.entity;
 
-import io.jacocoanalyzer.entity.MethodCoverage;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import lombok.Data;
@@ -10,10 +9,10 @@ import lombok.Data;
  */
 @Entity
 @Data
-public class PackageSumCoverage {
+public class ReportSumCoverage {
   @Id private int id;
-  private String packageName;
   private String coverageRunName;
+  private String reportName;
   private int linesum;
   private int linesmissedsum;
   private int linescoveredsum;
@@ -21,6 +20,6 @@ public class PackageSumCoverage {
   private int compsum;
   private int covavgpercent;
 
-  public PackageSumCoverage() {
+  public ReportSumCoverage() {
   }
 }

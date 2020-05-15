@@ -3,6 +3,6 @@ package io.jacocoanalyzer.entity;
 import java.util.List;
 
 public interface CoverageRepositoryCustom {
-  List<PackageSumCoverage> sumByPackage();
+  List<ReportSumCoverage> sumByPackage();
   void deleteCoverageRun(String coverageRunName);
 }
