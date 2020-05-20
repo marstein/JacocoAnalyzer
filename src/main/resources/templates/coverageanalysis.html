@@ -12,7 +12,22 @@
     <link rel="stylesheet" href="css/site.css"/>
 </head>
 <p>Jacoco Analyzer</p>
+<p>idea: show the following:
+    * crappy methods for a selectable sprint
+    * crappy packages for selectable sprint per module/report
+    * chart with coverage, complexity, crap over sprints (per report/module)
+</p>
 <body>
+<form action="coverageanalysis.html" th:attr="action=@{/coverageanalysis}">
+    <fieldset>
+        <label>
+            Run:
+            <input type="text" name="run" />
+        </label>
+        <input type="submit" value="Okay" />
+    </fieldset>
+</form>
+<h1>Coverage by run and report</h1>
 <table class="greyGridTable">
     <thead>
     <tr>
@@ -22,19 +37,50 @@
         <th>lines covered</th>
         <th>lines missed</th>
         <th>coverage avg %</th>
-        <th>crap</th>
         <th>complexity</th>
+        <th>crap</th>
     </tr>
     </thead>
     <tr th:each="coverage: ${coverages}">
         <td th:text="${coverage.coverageRunName}">Run</td>
-        <td th:text="${coverage.reportName}">Report</td>
+        <td th:text="${coverage.reportName}">Report/Module</td>
         <td class=num th:text="${coverage.linesum}">Lines</td>
         <td class=num th:text="${coverage.linescoveredsum}">Lines covered</td>
         <td class=num th:text="${coverage.linesmissedsum}">Lines missed</td>
         <td class=num th:text="${coverage.covavgpercent}">Coverage Avg%</td>
-        <td class=num th:text="${coverage.crapsum}">CRAP</td>
         <td class=num th:text="${coverage.compsum}">complexity</td>
+        <td class=num th:text="${coverage.crapsum}">CRAP</td>
+    </tr>
+</table>
+<h1>Crappy methods by run</h1>
+<table class="greyGridTable">
+    <thead>
+    <tr>
+        <th>Run</th>
+        <th>Report/Module</th>
+<!--        <th>Package</th>-->
+        <th>Class.Method</th>
+<!--        <th>Method</th>-->
+        <th>lines</th>
+        <th>lines covered</th>
+        <th>lines missed</th>
+        <th>coverage avg %</th>
+        <th>complexity</th>
+        <th>crap</th>
+    </tr>
+    </thead>
+    <tr th:each="coverage: ${crap}">
+        <td th:text="${coverage.coverageRunName}">Run</td>
+        <td th:text="${coverage.reportName}">Report/Module</td>
+<!--        <td th:text="${coverage.packageName}">package</td>-->
+        <td th:text="${coverage.getClassName() +'.'+ coverage.methodName}">class</td>
+<!--        <td th:text="${coverage.methodName}">method</td>-->
+        <td class=num th:text="${coverage.linesum}">Lines</td>
+        <td class=num th:text="${coverage.linescoveredsum}">Lines covered</td>
+        <td class=num th:text="${coverage.linesmissedsum}">Lines missed</td>
+        <td class=num th:text="${coverage.covavgpercent}">Coverage Avg%</td>
+        <td class=num th:text="${coverage.compsum}">complexity</td>
+        <td class=num th:text="${coverage.crapsum}">CRAP</td>
     </tr>
 </table>
 </body>

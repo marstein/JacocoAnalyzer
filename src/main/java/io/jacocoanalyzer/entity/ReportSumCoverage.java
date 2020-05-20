@@ -13,6 +13,9 @@ public class ReportSumCoverage {
   @Id private int id;
   private String coverageRunName;
   private String reportName;
+  private String packageName;
+  private String className;
+  private String methodName;
   private int linesum;
   private int linesmissedsum;
   private int linescoveredsum;

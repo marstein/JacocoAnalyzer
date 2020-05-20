@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(value = "/coverageanalysis")
@@ -20,10 +21,14 @@ public class CoverageAnalysisController {
     this.coverageRepositoryCustom = coverageRepositoryCustom;
   }
 
-  @RequestMapping(method = RequestMethod.GET) public String getCoverageAnalysis(Model model) {
+  @RequestMapping(method = RequestMethod.GET)
+  public String getCoverageAnalysis(@RequestParam(value = "run", required = false) String runName,
+      @RequestParam(value = "limit", required = false) Integer limit, Model model) {
     log.info("Getting coverage analysis!");
-    List<ReportSumCoverage> coverages = coverageRepositoryCustom.sumByPackage();
+    List<ReportSumCoverage> coverages = coverageRepositoryCustom.sumByPackage(runName);
     model.addAttribute("coverages", coverages);
+    List<ReportSumCoverage> crappyMethods = coverageRepositoryCustom.crappyMethods(runName, limit);
+    model.addAttribute("crap", crappyMethods);
     log.info("created HTML page with {} coverages", coverages.size());
     return "coverageanalysis";
   }
